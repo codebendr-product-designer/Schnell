@@ -16,9 +16,6 @@ extension Suit: CustomStringConvertible {
         rawValue
     }
 }
-”
 
-Excerpt From
-A Functional Programming Kickstart
-Daniel H Steinberg
-This material may be protected by copyright.
+
+
