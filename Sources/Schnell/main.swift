@@ -7,6 +7,6 @@ import Darwin
 //}
 
 
-
-
+let threeOfClubs = Card(rank: .three, suit: .clubs)
+print(threeOfClubs)
 
