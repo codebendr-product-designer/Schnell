@@ -4,10 +4,10 @@ public let numberOfSuits = suits.count
 public enum Suit: String, CaseIterable {
     case spades = "♠︎"
     case diamonds = "♦︎"
-    case clubs =  "♣︎"
+    case clubs = "♣︎"
     case hearts = "♥︎"
-    
-    var suits: Array<Self> { Self.allCases }
+
+    var suits: [Self] { Self.allCases }
     var count: Int { suits.count }
 }
 
@@ -16,6 +16,3 @@ extension Suit: CustomStringConvertible {
         rawValue
     }
 }
-
-
-

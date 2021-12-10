@@ -15,8 +15,8 @@ public enum Rank: String, CaseIterable {
     case jack = "J"
     case queen = "Q"
     case king = "K"
-    
-    var ranks: Array<Self> { Self.allCases }
+
+    var ranks: [Self] { Self.allCases }
     var count: Int { ranks.count }
 }
 
