@@ -2,6 +2,14 @@ import XCTest
 import class Foundation.Bundle
 import Schnell
 
+public extension XCTestCase {
+    func example(_ title: String, code: () throws -> Void) rethrows {
+        print("## \(title)")
+        try code()
+        print("---")
+    }
+}
+
 final class MultiParadigmTests: XCTestCase {
     let numbers  = [1, 2, 4, 10, -1, 2, -10]
     
