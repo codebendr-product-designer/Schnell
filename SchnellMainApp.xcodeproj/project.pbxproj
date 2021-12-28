@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F7B3FD0277BC3B200BD01D4 /* Schnell */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Schnell; sourceTree = "<group>"; };
 		9FC7279B277BC1150004EAD1 /* SchnellMainAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnellMainAppApp.swift; sourceTree = "<group>"; };
 		9FC7279C277BC1150004EAD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FC7279D277BC1170004EAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +46,7 @@
 		9FC72795277BC1150004EAD1 = {
 			isa = PBXGroup;
 			children = (
+				9F7B3FD0277BC3B200BD01D4 /* Schnell */,
 				9FC7279A277BC1150004EAD1 /* Shared */,
 				9FC727A9277BC1170004EAD1 /* macOS */,
 				9FC727A3277BC1170004EAD1 /* Products */,
