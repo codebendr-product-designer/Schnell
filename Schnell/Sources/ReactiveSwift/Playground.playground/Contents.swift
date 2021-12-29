@@ -4,16 +4,21 @@ import PlaygroundSupport
 import ReactiveSwift
 import UIKit
 
-var state = State()
+var viewModel = ViewModel()
+
 
 var seconds = 10
-Timer.every(1.second) {
+Timer.every(1.0.second) {
     seconds -= 1
-    state.next()
+    viewModel.next()
+    viewModel
+        .$contents
+        .sink {
+        print($0)
+    }
     if seconds == 0 {
         $0.invalidate()
     }
 }
-
 
 // PlaygroundPage.current.liveView = print("something something")

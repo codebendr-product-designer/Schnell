@@ -1,9 +1,9 @@
 import Foundation
 import Combine
 
-class ViewModel {
+public class ViewModel {
     private let state = State()
-    @Published private(set) var contents: String? = "...”
+    @Published public private(set) var contents: String? = "..."
     var cancellables: Set<AnyCancellable> = []
     
     public init() {
@@ -12,13 +12,13 @@ class ViewModel {
     }
 }
 
-extension ViewModel {
+public extension ViewModel {
     func next() {
         state.next()
     }
 }
 
-extension ViewModel {
+public extension ViewModel {
     func subscription() -> AnyCancellable {
         state.$model
             .dropFirst()
