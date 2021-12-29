@@ -4,7 +4,6 @@ import UIKit
 import Combine
 import ReactiveSwift
 
-
 var model = Model()
 var cancellables: Set<AnyCancellable> = []
 model.next()
@@ -20,8 +19,5 @@ model.$value
    
 subscription()
     .store(in: &cancellables)
-
-
-
 
 // PlaygroundPage.current.liveView = print("something something")
