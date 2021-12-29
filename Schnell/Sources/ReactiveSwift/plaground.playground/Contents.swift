@@ -1,22 +1,30 @@
+import Combine
 import Foundation
 import PlaygroundSupport
-import UIKit
-import Combine
 import ReactiveSwift
+import UIKit
 
-var model = Model()
+var state = State()
 var cancellables: Set<AnyCancellable> = []
-model.next()
+
+var _seconds = 10
+Timer.every(1.seconds) {
+    _seconds -= 1
+    state.next()
+    if _seconds == 0 {
+        $0.invalidate()
+    }
+}
 
 func subscription() -> AnyCancellable {
-model.$value
-    .dropFirst()
-    .map(\.description)
-    .sink {
-    print("number "+$0)
-   }
+    state.$model
+        .dropFirst()
+        .map(\.value.description)
+        .sink {
+            print("number " + $0)
+        }
 }
-   
+
 subscription()
     .store(in: &cancellables)
 

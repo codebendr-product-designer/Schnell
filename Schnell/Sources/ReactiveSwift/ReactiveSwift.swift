@@ -32,17 +32,16 @@ public struct Model {
 
 extension Model {
     private init(
-        value: Int
+        _ value: Int
     ) {
         self.value = value
     }
-
-    var next: Self { .init(value: Int.random(in: 1 ... 100)) }
+    
+    var next: Self { .init(.random(in: 1...100)) }
 }
 
 public class State {
   @Published public private(set) var model = Model()
-  
   public init() {}
 }
 
