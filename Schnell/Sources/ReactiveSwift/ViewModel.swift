@@ -4,27 +4,24 @@ import Combine
 public class ViewModel {
     private let state = State()
     @Published public private(set) var contents: String? = "..."
-    var cancellables: Set<AnyCancellable> = []
+//    var cancellables: Set<AnyCancellable> = []
     
     public init() {
         subscription()
-            .store(in: &cancellables)
     }
 }
 
 public extension ViewModel {
-    func next() {
-        state.next()
-    }
+    func next() { state.next() }
 }
 
 public extension ViewModel {
-    func subscription() -> AnyCancellable {
+    func subscription() {
         state.$model
             .dropFirst()
             .map(\.value.description)
-            .sink {
-                self.contents = $0
-            }
+            .descriptionAsOptional()
+//            .sink { self.contents = $0 }
+            .assign(to: &$contents)
     }
 }
