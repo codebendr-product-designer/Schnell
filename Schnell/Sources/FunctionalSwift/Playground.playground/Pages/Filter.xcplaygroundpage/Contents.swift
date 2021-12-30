@@ -19,13 +19,15 @@ class ViewController: UIViewController {
 //           let overlaidImage = ImageFilter.overlay(color: color)(blurredImage)
 //        let blurAndOverlay = ImageFilter.compose(filter: ImageFilter.blur(radius: radius),
 //                                                 with: ImageFilter.overlay(color: color))
+        let blurAndOverlay2 =
+        ImageFilter.blur(radius: radius) >>> ImageFilter.overlay(color: color)
 
         let view = UIView(frame: .init(x: 0, y: 0, width: 400, height: 400))
         view.backgroundColor = .white
 
         let image = UIImageView(frame: .init(x: 0, y: 0, width: 200, height: 200))
         image.contentMode = .scaleToFill
-        image.image = .init(ciImage: blurAndOverlay(ciimage))
+        image.image = .init(ciImage: blurAndOverlay2(ciimage))
 
         view.addSubview(image)
 
