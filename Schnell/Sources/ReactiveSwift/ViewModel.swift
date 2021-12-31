@@ -19,9 +19,7 @@ public extension ViewModel {
     func subscription() {
         state.$model
             .dropFirst()
-            .map(\.value.description)
-            .descriptionAsOptional()
-//            .sink { self.contents = $0 }
-            .assign(to: &$contents)
+            .map(\.value)
+            .assignDescription(asOptionalTo: &$contents)
     }
 }
