@@ -1,12 +1,22 @@
 import Foundation
+import Combine
 
 public class State {
-  @Published public private(set) var model = Model()
-  public init() {}
+    private var model = Model() {
+        didSet {
+            subject.send()
+        }
+    }
+    public let subject = PassthroughSubject<Void, Never>()
+    
+    public init() {}
 }
 
-extension State {
-  public func next() {
-    model = model.next
-  }
+public extension State {
+    
+    public var value: Int { model.value }
+    
+    func next() {
+        model = model.next
+    }
 }

@@ -1,11 +1,11 @@
-import Foundation
 import Combine
+import Foundation
 
 public class ViewModel {
     private let state = State()
-    @Published public private(set) var contents: String? = "..."
+    @Published public private(set) var contents: String = "..."
 //    var cancellables: Set<AnyCancellable> = []
-    
+
     public init() {
         subscription()
     }
@@ -17,9 +17,9 @@ public extension ViewModel {
 
 public extension ViewModel {
     func subscription() {
-        state.$model
-            .dropFirst()
-            .map(\.value)
-            .assignDescription(asOptionalTo: &$contents)
+        state
+            .subject
+            .map{[state] _ in state.value}
+            .assignDescription(to: &$contents)
     }
 }
