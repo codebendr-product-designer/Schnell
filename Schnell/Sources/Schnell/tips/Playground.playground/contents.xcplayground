@@ -5,5 +5,7 @@
         <page name='PropertyWrappers'/>
         <page name='OpaqueReturnTypes'/>
         <page name='DeclarativeUIView'/>
+        <page name='Dynamic Member LookUp'/>
+        <page name='DSL'/>
     </pages>
 </playground>
