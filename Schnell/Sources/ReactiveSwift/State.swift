@@ -1,13 +1,8 @@
 import Foundation
 import Combine
 
-public class State {
-    private var model = Model() {
-        didSet {
-            subject.send()
-        }
-    }
-    public let subject = PassthroughSubject<Void, Never>()
+public class State: ObservableObject {
+    @Published private var model = Model()
     
     public init() {}
 }
