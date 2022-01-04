@@ -4,5 +4,6 @@
         <page name='ResultBuilders'/>
         <page name='PropertyWrappers'/>
         <page name='OpaqueReturnTypes'/>
+        <page name='DeclarativeUIView'/>
     </pages>
 </playground>

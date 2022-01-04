@@ -99,6 +99,14 @@ extension SettingsBuilder {
 
 let shouldShowExperimental = true
 
+enum UserAccessLevel {
+    case restricted
+    case normal
+    case experimental
+}
+
+let accesssLevel: UserAccessLevel = .experimental
+
 let settings = makeSettings {
     Setting(name: "Offline mode", value: .bool(false))
     Setting(name: "Search page size", value: .int(25))
@@ -122,9 +130,12 @@ let settings = makeSettings {
         }
 }
 
-protocol Node {
+import UIKit
+protocol Node: UIView {
     associatedtype Body: Node
     var body: Body { get }
 }
+
+
 
 
