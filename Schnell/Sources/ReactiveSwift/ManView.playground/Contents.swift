@@ -21,3 +21,4 @@ PlaygroundPage.current.setLiveView(
     MainView()
         .frame(width: 500.0, height: 500.0)
 )
+print(24)
