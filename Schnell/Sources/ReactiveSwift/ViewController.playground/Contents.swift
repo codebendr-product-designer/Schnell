@@ -4,9 +4,9 @@ import ReactiveSwift
 import UIKit
 
 extension UIButton {
-    var text: String? {
+    var text: String {
         get {
-            title(for: .normal)
+            title(for: .normal) ?? ""
         }
         set {
             setTitle("Number \(String(describing: newValue))", for: .normal)
@@ -14,7 +14,7 @@ extension UIButton {
     }
 }
 
-class MyViewController: UIViewController {
+class ViewController: UIViewController {
     let viewModel = ViewModel()
     let button = UIButton()
     var cancellables: Set<AnyCancellable> = []
@@ -43,4 +43,4 @@ class MyViewController: UIViewController {
 }
 
 // Present the view controller in the Live View window
-PlaygroundPage.current.liveView = MyViewController()
+PlaygroundPage.current.liveView = ViewController()
