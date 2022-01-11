@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-public class ViewModel {
+public class ViewModel: ObservableObject {
     private let state = State()
     @Published public private(set) var contents: String = "..."
 //    var cancellables: Set<AnyCancellable> = []
@@ -17,6 +17,9 @@ public extension ViewModel {
 
 public extension ViewModel {
     func subscription() {
-        state.valuePublisher.assignDescription(to: &$contents)
+        state
+            .$value
+            .dropFirst()
+            .assignDescription(to: &$contents)
     }
 }
