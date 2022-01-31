@@ -1,7 +1,7 @@
-//: [Previous](@previous)
-
 import Foundation
 
-var greeting = "Hello, playground"
 
-//: [Next](@next)
+let nString = NSString("Hello")
+let s = String(nString)
+
+print(s)

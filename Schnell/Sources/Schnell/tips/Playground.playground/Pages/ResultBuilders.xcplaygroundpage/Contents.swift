@@ -1,10 +1,17 @@
 
 struct Setting {
     var name: String
-    var value: Value
+    var settings: [Setting] = []
 }
 
-
+extension Setting {
+    enum Value {
+        case bool(Bool)
+        case int(Int)
+        case string(String)
+        case group([Setting])
+    }
+}
 
 import SwiftUI
 
@@ -32,14 +39,7 @@ func makeSettings(@SettingsBuilder _ content: () -> [Setting]) -> [Setting] {
     content()
 }
 
-extension Setting {
-    enum Value {
-        case bool(Bool)
-        case int(Int)
-        case string(String)
-        case group([Setting])
-    }
-}
+
 
 struct SettingsGroup {
     var name: String
@@ -67,7 +67,7 @@ extension Setting: SettingsConvertible {
 
 extension SettingsGroup: SettingsConvertible {
     func asSettings() -> [Setting] {
-        [Setting(name: name, value: .group(settings()))]
+        [Setting(name: name, settings: settings())]
     }
 }
 
@@ -108,25 +108,25 @@ enum UserAccessLevel {
 let accesssLevel: UserAccessLevel = .experimental
 
 let settings = makeSettings {
-    Setting(name: "Offline mode", value: .bool(false))
-    Setting(name: "Search page size", value: .int(25))
+    Setting(name: "Offline mode")
+    Setting(name: "Search page size")
 
-    Setting(name: "Experimental", value: .group([
-        Setting(name: "Default name", value: .string("Untitled")),
-        Setting(name: "Fluid animations", value: .bool(true))
-    ]))
+    Setting(name: "Experimental", settings: [
+        Setting(name: "Default name"),
+        Setting(name: "Fluid animations")
+    ])
     SettingsGroup(name: "Experimental") {
-        Setting(name: "Default name", value: .string("Untitled"))
-        Setting(name: "Fluid animations", value: .bool(true))
+        Setting(name: "Default name")
+        Setting(name: "Fluid animations")
     }
     
     if shouldShowExperimental {
            SettingsGroup(name: "Experimental") {
-               Setting(name: "Default name", value: .string("Untitled"))
-               Setting(name: "Fluid animations", value: .bool(true))
+               Setting(name: "Default name")
+               Setting(name: "Fluid animations")
            }
        }  else {
-            Setting(name: "Request experimental access", value: .bool(false))
+            Setting(name: "Request experimental access")
         }
 }
 
