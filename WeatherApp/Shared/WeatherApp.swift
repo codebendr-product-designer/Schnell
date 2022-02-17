@@ -1,14 +1,14 @@
 //
-//  SchnellMainAppApp.swift
+//  WeatherAppApp.swift
 //  Shared
 //
-//  Created by Evans Domina Attafuah on 28/12/2021.
+//  Created by Evans Domina Attafuah on 17/02/2022.
 //
 
 import SwiftUI
 
 @main
-struct SchnellMainAppApp: App {
+struct WeatherApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

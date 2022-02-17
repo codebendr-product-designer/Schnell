@@ -7,33 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9FC727AB277BC1170004EAD1 /* SchnellMainAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7279B277BC1150004EAD1 /* SchnellMainAppApp.swift */; };
-		9FC727AC277BC1170004EAD1 /* SchnellMainAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7279B277BC1150004EAD1 /* SchnellMainAppApp.swift */; };
-		9FC727AD277BC1170004EAD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7279C277BC1150004EAD1 /* ContentView.swift */; };
-		9FC727AE277BC1170004EAD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC7279C277BC1150004EAD1 /* ContentView.swift */; };
-		9FC727AF277BC1170004EAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC7279D277BC1170004EAD1 /* Assets.xcassets */; };
-		9FC727B0277BC1170004EAD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC7279D277BC1170004EAD1 /* Assets.xcassets */; };
+		9FAC544227BECAC000C2FC94 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC543227BECABF00C2FC94 /* WeatherApp.swift */; };
+		9FAC544427BECAC000C2FC94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC543327BECABF00C2FC94 /* ContentView.swift */; };
+		9FAC544627BECAC000C2FC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC543427BECAC000C2FC94 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F7B3FD0277BC3B200BD01D4 /* Schnell */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Schnell; sourceTree = "<group>"; };
-		9FC7279B277BC1150004EAD1 /* SchnellMainAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchnellMainAppApp.swift; sourceTree = "<group>"; };
-		9FC7279C277BC1150004EAD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		9FC7279D277BC1170004EAD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9FC727A2277BC1170004EAD1 /* SchnellMainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchnellMainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FC727A8277BC1170004EAD1 /* SchnellMainApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchnellMainApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FC727AA277BC1170004EAD1 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		9FAC543227BECABF00C2FC94 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
+		9FAC543327BECABF00C2FC94 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9FAC543427BECAC000C2FC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9FAC543927BECAC000C2FC94 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9FC7279F277BC1170004EAD1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FC727A5277BC1170004EAD1 /* Frameworks */ = {
+		9FAC543627BECAC000C2FC94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,99 +30,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9FC72795277BC1150004EAD1 = {
+		9FAC542C27BECABF00C2FC94 = {
 			isa = PBXGroup;
 			children = (
-				9F7B3FD0277BC3B200BD01D4 /* Schnell */,
-				9FC7279A277BC1150004EAD1 /* Shared */,
-				9FC727A9277BC1170004EAD1 /* macOS */,
-				9FC727A3277BC1170004EAD1 /* Products */,
+				9FAC543127BECABF00C2FC94 /* Shared */,
+				9FAC543A27BECAC000C2FC94 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9FC7279A277BC1150004EAD1 /* Shared */ = {
+		9FAC543127BECABF00C2FC94 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				9FC7279B277BC1150004EAD1 /* SchnellMainAppApp.swift */,
-				9FC7279C277BC1150004EAD1 /* ContentView.swift */,
-				9FC7279D277BC1170004EAD1 /* Assets.xcassets */,
+				9FAC543227BECABF00C2FC94 /* WeatherApp.swift */,
+				9FAC543327BECABF00C2FC94 /* ContentView.swift */,
+				9FAC543427BECAC000C2FC94 /* Assets.xcassets */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		9FC727A3277BC1170004EAD1 /* Products */ = {
+		9FAC543A27BECAC000C2FC94 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9FC727A2277BC1170004EAD1 /* SchnellMainApp.app */,
-				9FC727A8277BC1170004EAD1 /* SchnellMainApp.app */,
+				9FAC543927BECAC000C2FC94 /* WeatherApp.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		9FC727A9277BC1170004EAD1 /* macOS */ = {
-			isa = PBXGroup;
-			children = (
-				9FC727AA277BC1170004EAD1 /* macOS.entitlements */,
-			);
-			path = macOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9FC727A1277BC1170004EAD1 /* SchnellMainApp (iOS) */ = {
+		9FAC543827BECAC000C2FC94 /* WeatherApp  */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9FC727B3277BC1170004EAD1 /* Build configuration list for PBXNativeTarget "SchnellMainApp (iOS)" */;
+			buildConfigurationList = 9FAC544A27BECAC000C2FC94 /* Build configuration list for PBXNativeTarget "WeatherApp " */;
 			buildPhases = (
-				9FC7279E277BC1170004EAD1 /* Sources */,
-				9FC7279F277BC1170004EAD1 /* Frameworks */,
-				9FC727A0277BC1170004EAD1 /* Resources */,
+				9FAC543527BECAC000C2FC94 /* Sources */,
+				9FAC543627BECAC000C2FC94 /* Frameworks */,
+				9FAC543727BECAC000C2FC94 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "SchnellMainApp (iOS)";
-			productName = "SchnellMainApp (iOS)";
-			productReference = 9FC727A2277BC1170004EAD1 /* SchnellMainApp.app */;
-			productType = "com.apple.product-type.application";
-		};
-		9FC727A7277BC1170004EAD1 /* SchnellMainApp (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9FC727B6277BC1170004EAD1 /* Build configuration list for PBXNativeTarget "SchnellMainApp (macOS)" */;
-			buildPhases = (
-				9FC727A4277BC1170004EAD1 /* Sources */,
-				9FC727A5277BC1170004EAD1 /* Frameworks */,
-				9FC727A6277BC1170004EAD1 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "SchnellMainApp (macOS)";
-			productName = "SchnellMainApp (macOS)";
-			productReference = 9FC727A8277BC1170004EAD1 /* SchnellMainApp.app */;
+			name = "WeatherApp ";
+			productName = "WeatherApp (iOS)";
+			productReference = 9FAC543927BECAC000C2FC94 /* WeatherApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		9FC72796277BC1150004EAD1 /* Project object */ = {
+		9FAC542D27BECABF00C2FC94 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					9FC727A1277BC1170004EAD1 = {
-						CreatedOnToolsVersion = 13.2;
-					};
-					9FC727A7277BC1170004EAD1 = {
-						CreatedOnToolsVersion = 13.2;
+					9FAC543827BECAC000C2FC94 = {
+						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = 9FC72799277BC1150004EAD1 /* Build configuration list for PBXProject "SchnellMainApp" */;
+			buildConfigurationList = 9FAC543027BECABF00C2FC94 /* Build configuration list for PBXProject "WeatherApp" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -143,59 +99,41 @@
 				en,
 				Base,
 			);
-			mainGroup = 9FC72795277BC1150004EAD1;
-			productRefGroup = 9FC727A3277BC1170004EAD1 /* Products */;
+			mainGroup = 9FAC542C27BECABF00C2FC94;
+			productRefGroup = 9FAC543A27BECAC000C2FC94 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FC727A1277BC1170004EAD1 /* SchnellMainApp (iOS) */,
-				9FC727A7277BC1170004EAD1 /* SchnellMainApp (macOS) */,
+				9FAC543827BECAC000C2FC94 /* WeatherApp  */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		9FC727A0277BC1170004EAD1 /* Resources */ = {
+		9FAC543727BECAC000C2FC94 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC727AF277BC1170004EAD1 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FC727A6277BC1170004EAD1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FC727B0277BC1170004EAD1 /* Assets.xcassets in Resources */,
+				9FAC544627BECAC000C2FC94 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		9FC7279E277BC1170004EAD1 /* Sources */ = {
+		9FAC543527BECAC000C2FC94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC727AD277BC1170004EAD1 /* ContentView.swift in Sources */,
-				9FC727AB277BC1170004EAD1 /* SchnellMainAppApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9FC727A4277BC1170004EAD1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9FC727AE277BC1170004EAD1 /* ContentView.swift in Sources */,
-				9FC727AC277BC1170004EAD1 /* SchnellMainAppApp.swift in Sources */,
+				9FAC544427BECAC000C2FC94 /* ContentView.swift in Sources */,
+				9FAC544227BECAC000C2FC94 /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		9FC727B1277BC1170004EAD1 /* Debug */ = {
+		9FAC544827BECAC000C2FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,7 +192,7 @@
 			};
 			name = Debug;
 		};
-		9FC727B2277BC1170004EAD1 /* Release */ = {
+		9FAC544927BECAC000C2FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -306,7 +244,7 @@
 			};
 			name = Release;
 		};
-		9FC727B4277BC1170004EAD1 /* Debug */ = {
+		9FAC544B27BECAC000C2FC94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -327,8 +265,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.SchnellMainApp;
-				PRODUCT_NAME = SchnellMainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.WeatherApp;
+				PRODUCT_NAME = WeatherApp;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -336,7 +274,7 @@
 			};
 			name = Debug;
 		};
-		9FC727B5277BC1170004EAD1 /* Release */ = {
+		9FAC544C27BECAC000C2FC94 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -357,8 +295,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.SchnellMainApp;
-				PRODUCT_NAME = SchnellMainApp;
+				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.WeatherApp;
+				PRODUCT_NAME = WeatherApp;
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -367,93 +305,28 @@
 			};
 			name = Release;
 		};
-		9FC727B7277BC1170004EAD1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CLCZFAVBGV;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.SchnellMainApp;
-				PRODUCT_NAME = SchnellMainApp;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		9FC727B8277BC1170004EAD1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = CLCZFAVBGV;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = io.justpixel.SchnellMainApp;
-				PRODUCT_NAME = SchnellMainApp;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9FC72799277BC1150004EAD1 /* Build configuration list for PBXProject "SchnellMainApp" */ = {
+		9FAC543027BECABF00C2FC94 /* Build configuration list for PBXProject "WeatherApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9FC727B1277BC1170004EAD1 /* Debug */,
-				9FC727B2277BC1170004EAD1 /* Release */,
+				9FAC544827BECAC000C2FC94 /* Debug */,
+				9FAC544927BECAC000C2FC94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9FC727B3277BC1170004EAD1 /* Build configuration list for PBXNativeTarget "SchnellMainApp (iOS)" */ = {
+		9FAC544A27BECAC000C2FC94 /* Build configuration list for PBXNativeTarget "WeatherApp " */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				9FC727B4277BC1170004EAD1 /* Debug */,
-				9FC727B5277BC1170004EAD1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9FC727B6277BC1170004EAD1 /* Build configuration list for PBXNativeTarget "SchnellMainApp (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				9FC727B7277BC1170004EAD1 /* Debug */,
-				9FC727B8277BC1170004EAD1 /* Release */,
+				9FAC544B27BECAC000C2FC94 /* Debug */,
+				9FAC544C27BECAC000C2FC94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 9FC72796277BC1150004EAD1 /* Project object */;
+	rootObject = 9FAC542D27BECABF00C2FC94 /* Project object */;
 }

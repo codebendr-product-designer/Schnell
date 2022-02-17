@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  
-//
-//  Created by Chris Eidhof on 04.10.21.
-//
-
 import Foundation
 
 @resultBuilder
