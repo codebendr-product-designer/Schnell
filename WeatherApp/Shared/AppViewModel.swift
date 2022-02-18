@@ -1,14 +1,7 @@
 import Foundation
 import Combine
 
-private let weatherJsonDecoder: JSONDecoder = {
-  let jsonDecoder = JSONDecoder()
-  let formatter = DateFormatter()
-  formatter.dateFormat = "yyyy-MM-dd"
-  jsonDecoder.dateDecodingStrategy = .formatted(formatter)
-  jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
-  return jsonDecoder
-}()
+
 
 class AppViewModel: ObservableObject {
     @Published var isConnected: Bool
@@ -16,25 +9,26 @@ class AppViewModel: ObservableObject {
     private var weatherRequestCancellable: AnyCancellable?
     
     let dayOfWeekFormatter: DateFormatter = {
-      let formatter = DateFormatter()
-      formatter.dateFormat = "EEEE"
-      return formatter
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE"
+        return formatter
     }()
     
-    init(isConnected: Bool = true) {
+    init(
+        isConnected: Bool = true,
+        weatherClient: WeatherClientProtocol = WeatherClient()
+    )
+    {
         self.isConnected = isConnected
         
-        self.weatherRequestCancellable = URLSession.shared
-          .dataTaskPublisher(for: URL(string: "https://www.metaweather.com/api/location/2459115")!)
-          .map { data, _ in data }
-          .decode(type: WeatherResponse.self, decoder: weatherJsonDecoder)
-          .receive(on: DispatchQueue.main)
-          .sink(
-            receiveCompletion: { _ in },
-            receiveValue: { [weak self] in
-              self?.weatherResults = $0.consolidatedWeather
-            }
-          )
-        
+        self.weatherRequestCancellable = weatherClient.weather()
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue: { response in
+                    DispatchQueue.main.async {
+                        self.weatherResults = response.consolidatedWeather
+                    }
+                }
+            )
     }
 }
