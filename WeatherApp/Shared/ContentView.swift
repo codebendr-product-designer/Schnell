@@ -1,54 +1,59 @@
 import SwiftUI
 
-class AppViewModel: ObservableObject {
-    @Published var isConnected: Bool
-    
-    init(isConnected: Bool = true) {
-        self.isConnected = isConnected
-    }
-}
+
 
 struct ContentView: View {
-  @ObservedObject var viewModel: AppViewModel
-
-  var body: some View {
-    NavigationView {
-      ZStack(alignment: .bottom) {
-        ZStack(alignment: .bottomTrailing) {
-          List {
-            EmptyView()
-          }
-
-          Button(
-            action: {  }
-          ) {
-            Image(systemName: "location.fill")
-              .foregroundColor(.white)
-              .frame(width: 60, height: 60)
-          }
-          .background(Color.black)
-          .clipShape(Circle())
-          .padding()
+    @ObservedObject var viewModel: AppViewModel
+    
+    var body: some View {
+        NavigationView {
+            ZStack(alignment: .bottom) {
+                ZStack(alignment: .bottomTrailing) {
+                    List {
+                        ForEach(self.viewModel.weatherResults, id: \.id) { weather in
+                            Text(self.viewModel.dayOfWeekFormatter.string(from: weather.applicableDate).capitalized)
+                              .font(.title)
+                            VStack(alignment: .leading) {
+                                Text("Current temp: \(weather.theTemp, specifier: "%.1f")°C")
+                                Text("Max temp: \(weather.maxTemp, specifier: "%.1f")°C")
+                                Text("Min temp: \(weather.minTemp, specifier: "%.1f")°C")
+                            }
+                        }
+                    }
+                    
+                    Button(
+                        action: {  }
+                    ) {
+                        Image(systemName: "location.fill")
+                            .foregroundColor(.white)
+                            .frame(width: 60, height: 60)
+                    }
+                    .background(Color.black)
+                    .clipShape(Circle())
+                    .padding()
+                }
+                
+                if !self.viewModel.isConnected {
+                    HStack {
+                        Image(systemName: "exclamationmark.octagon.fill")
+                        
+                        Text("Not connected to internet")
+                    }
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.red)
+                    .frame(height: 200)
+                }
+            }
+            .navigationBarTitle("Weather")
         }
-
-        if !self.viewModel.isConnected {
-          HStack {
-            Image(systemName: "exclamationmark.octagon.fill")
-
-            Text("Not connected to internet")
-          }
-          .foregroundColor(.white)
-          .padding()
-          .background(Color.red)
-        }
-      }
-      .navigationBarTitle("Weather")
     }
-  }
 }
 
+
+
 struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-      ContentView(viewModel: .init())
-  }
+    static var previews: some View {
+        ContentView(viewModel: .init())
+    }
 }
