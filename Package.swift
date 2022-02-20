@@ -14,14 +14,14 @@ let package = Package(
         .library(name: "ReactiveSwift", targets: ["ReactiveSwift"]),
         .library(name: "FunctionalSwift", targets: ["FunctionalSwift"]),
         .library(name: "Kabel", targets: ["Kabel"]),
-        .library(name: "DependencyDesign", targets: ["DependencyDesign"])
-          //  .library(name: "DependecyInjection", targets: ["DependecyInjection"])
-       
+        .library(name: "DependencyDesign", targets: ["DependencyDesign"]),
+        .library(name: "DesignPatterns", targets: ["DesignPatterns"])
     ],
     dependencies: [
         .package(name: "HTML", url: "https://github.com/robb/Swim.git", .branch("main")),
     ],
     targets: [
+        .target(name: "DesignPatterns"),
         .target(name: "Kabel"),
         .target(name: "Schnell"),
         .target(name: "FunctionalSwift"),
