@@ -16,8 +16,9 @@ let package = Package(
         .library(name: "Kabel", targets: ["Kabel"]),
         //Dependency Design
         .library(name: "WeatherClient", targets: ["WeatherClient"]),
+        .library(name: "WeatherClientLive", targets: ["WeatherClientLive"]),
+        .library(name: "WeatherFeature", targets: ["WeatherFeature"]),
         .library(name: "DesignPatterns", targets: ["DesignPatterns"]),
-        .library(name: "WeatherClientLive", targets: ["WeatherClientLive"])
     ],
     dependencies: [
         .package(name: "HTML", url: "https://github.com/robb/Swim.git", .branch("main")),
@@ -25,6 +26,7 @@ let package = Package(
     targets: [
         .target(name: "WeatherClient"),
         .target(name: "WeatherClientLive", dependencies: ["WeatherClient"]),
+        .target(name: "WeatherFeature", dependencies: ["WeatherClientLive"]),
         .target(name: "DesignPatterns"),
         .target(name: "Kabel"),
         .target(name: "Schnell"),

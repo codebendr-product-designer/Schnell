@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DependencyDesign"
-               BuildableName = "DependencyDesign"
-               BlueprintName = "DependencyDesign"
+               BlueprintIdentifier = "Schnell"
+               BuildableName = "Schnell"
+               BlueprintName = "Schnell"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "SchnellTests"
+               BuildableName = "SchnellTests"
+               BlueprintName = "SchnellTests"
+               ReferencedContainer = "container:">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DependencyDesign"
-            BuildableName = "DependencyDesign"
-            BlueprintName = "DependencyDesign"
+            BlueprintIdentifier = "Schnell"
+            BuildableName = "Schnell"
+            BlueprintName = "Schnell"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

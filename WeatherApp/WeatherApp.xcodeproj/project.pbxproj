@@ -7,17 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9F7EB5E127BFC366003A4832 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7EB5E027BFC366003A4832 /* AppViewModel.swift */; };
-		9FA609A027CE2E450066C3C4 /* DependencyDesign in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA6099F27CE2E450066C3C4 /* DependencyDesign */; };
+		9FA609A227CE9C3A0066C3C4 /* WeatherClient in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A127CE9C3A0066C3C4 /* WeatherClient */; };
+		9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */; };
+		9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A527CEA07F0066C3C4 /* WeatherFeature */; };
 		9FAC544227BECAC000C2FC94 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC543227BECABF00C2FC94 /* WeatherApp.swift */; };
-		9FAC544427BECAC000C2FC94 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC543327BECABF00C2FC94 /* ContentView.swift */; };
 		9FAC544627BECAC000C2FC94 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FAC543427BECAC000C2FC94 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9F7EB5E027BFC366003A4832 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		9FAC543227BECABF00C2FC94 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
-		9FAC543327BECABF00C2FC94 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9FAC543427BECAC000C2FC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FAC543927BECAC000C2FC94 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -27,7 +25,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FA609A027CE2E450066C3C4 /* DependencyDesign in Frameworks */,
+				9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */,
+				9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */,
+				9FA609A227CE9C3A0066C3C4 /* WeatherClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,9 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				9FAC543227BECABF00C2FC94 /* WeatherApp.swift */,
-				9FAC543327BECABF00C2FC94 /* ContentView.swift */,
 				9FAC543427BECAC000C2FC94 /* Assets.xcassets */,
-				9F7EB5E027BFC366003A4832 /* AppViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -86,7 +84,9 @@
 			);
 			name = "WeatherApp ";
 			packageProductDependencies = (
-				9FA6099F27CE2E450066C3C4 /* DependencyDesign */,
+				9FA609A127CE9C3A0066C3C4 /* WeatherClient */,
+				9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */,
+				9FA609A527CEA07F0066C3C4 /* WeatherFeature */,
 			);
 			productName = "WeatherApp (iOS)";
 			productReference = 9FAC543927BECAC000C2FC94 /* WeatherApp.app */;
@@ -141,8 +141,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FAC544427BECAC000C2FC94 /* ContentView.swift in Sources */,
-				9F7EB5E127BFC366003A4832 /* AppViewModel.swift in Sources */,
 				9FAC544227BECAC000C2FC94 /* WeatherApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,9 +344,17 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9FA6099F27CE2E450066C3C4 /* DependencyDesign */ = {
+		9FA609A127CE9C3A0066C3C4 /* WeatherClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = DependencyDesign;
+			productName = WeatherClient;
+		};
+		9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WeatherClientLive;
+		};
+		9FA609A527CEA07F0066C3C4 /* WeatherFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WeatherFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
