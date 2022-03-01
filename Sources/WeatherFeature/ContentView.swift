@@ -1,11 +1,17 @@
 import SwiftUI
 import Combine
-import DependencyDesign
+import WeatherClient
 
-struct ContentView: View {
+public struct ContentView: View {
     @ObservedObject var viewModel: AppViewModel
     
-    var body: some View {
+    public init(
+        viewModel: AppViewModel
+    ) {
+        self.viewModel = viewModel
+    }
+    
+    public var body: some View {
         NavigationView {
             ZStack(alignment: .bottom) {
                 ZStack(alignment: .bottomTrailing) {
@@ -56,7 +62,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(
             viewModel: .init(
                 weatherClient: {
-                    var client = WeatherClient.live
+                    var client = WeatherClient.happyPath
                     client.searchLocations = { _ in
                         Fail(error: NSError(domain: "", code: 1))
                             .eraseToAnyPublisher()

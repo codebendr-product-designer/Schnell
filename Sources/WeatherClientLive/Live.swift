@@ -1,6 +1,6 @@
 import Combine
 import CoreLocation
-import DependencyDesign
+import WeatherClient
 
 public extension WeatherClient {
 static let live = Self(

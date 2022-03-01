@@ -1,8 +1,8 @@
 import Foundation
 import Combine
-import DependencyDesign
+import WeatherClient
 
-class AppViewModel: ObservableObject {
+public class AppViewModel: ObservableObject {
     @Published var isConnected: Bool
     @Published var weatherResults = [WeatherResponse.ConsolidatedWeather]()
     private var weatherRequestCancellable: AnyCancellable?
@@ -13,10 +13,9 @@ class AppViewModel: ObservableObject {
         return formatter
     }()
     
-    
-    init(
+    public init(
         isConnected: Bool = true,
-        weatherClient: WeatherClient = .live)
+        weatherClient: WeatherClient)
     {
         self.isConnected = isConnected
         
