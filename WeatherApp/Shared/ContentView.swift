@@ -1,5 +1,6 @@
 import SwiftUI
 import Combine
+import DependencyDesign
 
 struct ContentView: View {
     @ObservedObject var viewModel: AppViewModel
@@ -55,7 +56,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView(
             viewModel: .init(
                 weatherClient: {
-                    var client = WeatherClient.happyPath
+                    var client = WeatherClient.live
                     client.searchLocations = { _ in
                         Fail(error: NSError(domain: "", code: 1))
                             .eraseToAnyPublisher()

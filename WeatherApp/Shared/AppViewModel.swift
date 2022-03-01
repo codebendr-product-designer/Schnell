@@ -1,7 +1,6 @@
 import Foundation
 import Combine
-
-
+import DependencyDesign
 
 class AppViewModel: ObservableObject {
     @Published var isConnected: Bool

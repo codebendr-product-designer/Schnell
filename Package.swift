@@ -14,19 +14,22 @@ let package = Package(
         .library(name: "ReactiveSwift", targets: ["ReactiveSwift"]),
         .library(name: "FunctionalSwift", targets: ["FunctionalSwift"]),
         .library(name: "Kabel", targets: ["Kabel"]),
-        .library(name: "DependencyDesign", targets: ["DependencyDesign"]),
-        .library(name: "DesignPatterns", targets: ["DesignPatterns"])
+        //Dependency Design
+        .library(name: "WeatherClient", targets: ["WeatherClient"]),
+        .library(name: "DesignPatterns", targets: ["DesignPatterns"]),
+        .library(name: "WeatherClientLive", targets: ["WeatherClientLive"])
     ],
     dependencies: [
         .package(name: "HTML", url: "https://github.com/robb/Swim.git", .branch("main")),
     ],
     targets: [
+        .target(name: "WeatherClient"),
+        .target(name: "WeatherClientLive", dependencies: ["WeatherClient"]),
         .target(name: "DesignPatterns"),
         .target(name: "Kabel"),
         .target(name: "Schnell"),
         .target(name: "FunctionalSwift"),
         .target(name: "ReactiveSwift"),
-        .target(name: "DependencyDesign"),
         .executableTarget(
             name: "Koch",
             dependencies: [
