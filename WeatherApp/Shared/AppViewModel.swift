@@ -14,10 +14,10 @@ class AppViewModel: ObservableObject {
         return formatter
     }()
     
+    
     init(
         isConnected: Bool = true,
-        weatherClient: WeatherClientProtocol = WeatherClient()
-    )
+        weatherClient: WeatherClient = .live)
     {
         self.isConnected = isConnected
         

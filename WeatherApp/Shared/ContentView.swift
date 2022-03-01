@@ -1,6 +1,5 @@
 import SwiftUI
-
-
+import Combine
 
 struct ContentView: View {
     @ObservedObject var viewModel: AppViewModel
@@ -11,9 +10,10 @@ struct ContentView: View {
                 ZStack(alignment: .bottomTrailing) {
                     List {
                         ForEach(self.viewModel.weatherResults, id: \.id) { weather in
-                            Text(self.viewModel.dayOfWeekFormatter.string(from: weather.applicableDate).capitalized)
-                              .font(.title)
                             VStack(alignment: .leading) {
+                                Text(self.viewModel.dayOfWeekFormatter.string(from: weather.applicableDate).capitalized)
+                                    .font(.title)
+                                
                                 Text("Current temp: \(weather.theTemp, specifier: "%.1f")°C")
                                 Text("Max temp: \(weather.maxTemp, specifier: "%.1f")°C")
                                 Text("Min temp: \(weather.minTemp, specifier: "%.1f")°C")
@@ -50,10 +50,18 @@ struct ContentView: View {
     }
 }
 
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: .init(weatherClient: MockWeatherClient()))
+        ContentView(
+            viewModel: .init(
+                weatherClient: {
+                    var client = WeatherClient.happyPath
+                    client.searchLocations = { _ in
+                        Fail(error: NSError(domain: "", code: 1))
+                            .eraseToAnyPublisher()
+                    }
+                    return client
+                }()
+            ))
     }
 }
