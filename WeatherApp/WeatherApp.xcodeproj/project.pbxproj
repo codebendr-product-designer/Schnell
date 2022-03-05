@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9FA609A227CE9C3A0066C3C4 /* WeatherClient in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A127CE9C3A0066C3C4 /* WeatherClient */; };
+		9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9F976AE527D3CAD200327BC3 /* PathMonitorLive */; };
 		9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */; };
 		9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A527CEA07F0066C3C4 /* WeatherFeature */; };
 		9FAC544227BECAC000C2FC94 /* WeatherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAC543227BECABF00C2FC94 /* WeatherApp.swift */; };
@@ -25,9 +25,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */,
 				9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */,
 				9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */,
-				9FA609A227CE9C3A0066C3C4 /* WeatherClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,9 +84,9 @@
 			);
 			name = "WeatherApp ";
 			packageProductDependencies = (
-				9FA609A127CE9C3A0066C3C4 /* WeatherClient */,
 				9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */,
 				9FA609A527CEA07F0066C3C4 /* WeatherFeature */,
+				9F976AE527D3CAD200327BC3 /* PathMonitorLive */,
 			);
 			productName = "WeatherApp (iOS)";
 			productReference = 9FAC543927BECAC000C2FC94 /* WeatherApp.app */;
@@ -344,9 +344,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		9FA609A127CE9C3A0066C3C4 /* WeatherClient */ = {
+		9F976AE527D3CAD200327BC3 /* PathMonitorLive */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = WeatherClient;
+			productName = PathMonitorLive;
 		};
 		9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */ = {
 			isa = XCSwiftPackageProductDependency;
