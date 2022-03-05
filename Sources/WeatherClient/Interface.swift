@@ -17,11 +17,11 @@ public struct WeatherResponse: Decodable, Equatable {
     public var consolidatedWeather: [ConsolidatedWeather]
     
     public struct ConsolidatedWeather: Decodable, Equatable {
-        public private(set) var applicableDate: Date
-        public private(set) var id: Int
-        public private(set) var maxTemp: Double
-        public private(set) var minTemp: Double
-        public private(set) var theTemp: Double
+        public var applicableDate: Date
+        public var id: Int
+        public var maxTemp: Double
+        public var minTemp: Double
+        public var theTemp: Double
         
         public init(applicableDate: Date, id: Int, maxTemp: Double, minTemp: Double, theTemp: Double) {
             self.applicableDate = applicableDate

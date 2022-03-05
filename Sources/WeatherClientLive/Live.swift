@@ -27,6 +27,7 @@ private let weatherJsonDecoder: JSONDecoder = {
     return jsonDecoder
 }()
 
+//simulate stress test
 //public let __tmp0 = 2 * 2 * 2 * 2.0 / 2 + 2
 //public let __tmp1 = 2 * 2 * 2 * 2.0 / 2 + 2
 //public let __tmp2 = 2 * 2 * 2 * 2.0 / 2 + 2
