@@ -61,6 +61,7 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(
             viewModel: .init(
+                pathMonitorClient: .delayed(),
                 weatherClient: {
                     var client = WeatherClient.happyPath
                     client.searchLocations = { _ in
