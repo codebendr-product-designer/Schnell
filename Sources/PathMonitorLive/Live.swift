@@ -1,18 +1,21 @@
 import Network
 import Foundation
 import PathMonitor
+import Combine
 
 public extension PathMonitor {
-    static var live: Self {
+    static func live(queue: DispatchQueue = .main) -> Self {
         let monitor = NWPathMonitor()
-        return .init(
-            setPathUpdateHandler: { callback in
-                monitor.pathUpdateHandler = { path in
-                    callback(.init(rawValue: path))
-                }
-            },
-            start: monitor.start,
-            cancel: { monitor.cancel() }
+        let subject = PassthroughSubject<NWPath, Never>()
+        monitor.pathUpdateHandler = subject.send
+        
+        return .init(publisher:subject
+                        .handleEvents(
+                            receiveSubscription: { _ in monitor.start(queue: queue) },
+                            receiveCancel: monitor.cancel
+                        )
+                        .map(NetworkPath.init(rawValue:))
+                        .eraseToAnyPublisher()
         )
     }
 }

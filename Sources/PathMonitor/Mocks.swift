@@ -1,47 +1,35 @@
 import Network
 import Foundation
+import Combine
 
 public extension PathMonitor {
     static let satisfied = Self(
-        setPathUpdateHandler: { callback in
-            callback(NetworkPath(status: .satisfied))
-        }
+        publisher: Just(.init(status: .satisfied))
+            .eraseToAnyPublisher()
     )
-}
-
-public extension PathMonitor {
+    
     static let unsatisfied = Self(
-        setPathUpdateHandler: { callback in
-            callback(NetworkPath(status: .unsatisfied))
-        }
+        publisher: Just(.init(status: .unsatisfied))
+            .eraseToAnyPublisher()
     )
-}
-
-public extension PathMonitor {
+    
     static let flakey = Self(
-        setPathUpdateHandler: { callback in
-            var status = NWPath.Status.satisfied
-            
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
-                callback(NetworkPath(status: status))
-                status = status == .satisfied ? .unsatisfied : .satisfied
-            }
-        }
+        publisher: Timer.publish(every: 2, on: .main, in: .default)
+            .autoconnect()
+            .scan(.satisfied, { status, _ in
+                status == .satisfied ? .unsatisfied : .satisfied
+            })
+            .map{ NetworkPath(status: $0) }
+            .eraseToAnyPublisher()
     )
-}
-
-public extension PathMonitor {
-    static func delayed(_ withTimeInterval: TimeInterval = 10) -> Self {
+    
+    static func delayed(for every: TimeInterval = 10) -> Self {
         .init(
-            setPathUpdateHandler: { callback in
-                var status = NWPath.Status.unsatisfied
-                
-                Timer.scheduledTimer(withTimeInterval: withTimeInterval, repeats: false) { _ in
-                    status = .satisfied
-                    callback(NetworkPath(status: status))
-                    
-                }
-            }
+            publisher: Timer.publish(every: every, on: .main, in: .default)
+                .autoconnect()
+                .scan(.unsatisfied, { status, _ in .satisfied })
+                .map{ NetworkPath(status: $0) }
+                .eraseToAnyPublisher()
         )
     }
 }

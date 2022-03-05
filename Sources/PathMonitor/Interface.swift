@@ -1,7 +1,12 @@
 import Network
+import Combine
 
 public struct NetworkPath {
     public var status: NWPath.Status
+    
+    public init(status: NWPath.Status) {
+        self.status = status
+    }
 }
 
 public extension NetworkPath {
@@ -11,13 +16,9 @@ public extension NetworkPath {
 }
 
 public struct PathMonitor {
-    public var setPathUpdateHandler: (@escaping (NetworkPath) -> Void) -> Void
-    public var start: (DispatchQueue) -> Void = { _ in }
-    public var cancel: () -> Void = { }
+   public var publisher: AnyPublisher<NetworkPath, Never>
     
-    public init(setPathUpdateHandler: @escaping (@escaping (NetworkPath) -> Void) -> Void, start: @escaping (DispatchQueue) -> Void = { _ in }, cancel: @escaping () -> Void = { }) {
-        self.setPathUpdateHandler = setPathUpdateHandler
-        self.start = start
-        self.cancel = cancel
+   public init(publisher: AnyPublisher<NetworkPath, Never>) {
+        self.publisher = publisher
     }
 }

@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 import WeatherClient
-import PathMonitorClient
+import PathMonitor
 
 
 public class AppViewModel: ObservableObject {
@@ -9,7 +9,7 @@ public class AppViewModel: ObservableObject {
     @Published var weatherResults = [WeatherResponse.ConsolidatedWeather]()
     private var cancellables: Set<AnyCancellable> = []
     private let weatherClient: WeatherClient
-    private let pathMonitorClient: PathMonitorClient
+    private let pathMonitorClient: PathMonitor
     
     let dayOfWeekFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -18,26 +18,26 @@ public class AppViewModel: ObservableObject {
     }()
     
     public init(
-        pathMonitorClient: PathMonitorClient,
+        pathMonitorClient: PathMonitor,
         weatherClient: WeatherClient
     ){
         self.weatherClient = weatherClient
         self.pathMonitorClient = pathMonitorClient
-        pathMonitorClient.setPathUpdateHandler { [weak self] path in
-            guard let self = self else { return }
-            self.isConnected = path.status == .satisfied
-            if self.isConnected {
-                self.refresh()
-            } else {
-                self.weatherResults = []
+        pathMonitorClient.publisher
+            .map { $0.status == .satisfied }
+            .removeDuplicates()
+            .sink { [weak self] isConnected in
+                guard let self = self else { return }
+                self.isConnected = isConnected
+                if self.isConnected {
+                    self.refresh()
+                } else {
+                    self.weatherResults = []
+                }
             }
-        }
-        pathMonitorClient.start(.main)
+            .store(in: &cancellables)
     }
     
-    deinit {
-        pathMonitorClient.cancel()
-    }
     func refresh() {
         self.weatherResults = []
         self.weatherClient.weather()
