@@ -32,7 +32,7 @@ let package = Package(
         .target(name: "PathMonitorLive", dependencies: ["PathMonitor"]),
         .target(name: "WeatherClient"),
         .target(name: "WeatherClientLive", dependencies: ["WeatherClient"]),
-        .target(name: "WeatherFeature", dependencies: ["WeatherClientLive", "PathMonitorLive"]),
+        .target(name: "WeatherFeature", dependencies: ["WeatherClient", "PathMonitor"]),
         .target(name: "DesignPatterns"),
         .target(name: "Kabel"),
         .target(name: "Schnell"),

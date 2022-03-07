@@ -1,14 +1,14 @@
 import SwiftUI
 import WeatherClientLive
 import WeatherFeature
-import PathMonitorClient
+import PathMonitorLive
 
 @main
 struct WeatherApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView(viewModel: .init(
-                pathMonitorClient: .live,
+                pathMonitorClient: .live(),
                 weatherClient: .live))
         }
     }

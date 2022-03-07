@@ -29,7 +29,7 @@ public struct ContentView: View {
                     }
                     
                     Button(
-                        action: {  }
+                        action: { viewModel.locationButtonTapped() }
                     ) {
                         Image(systemName: "location.fill")
                             .foregroundColor(.white)

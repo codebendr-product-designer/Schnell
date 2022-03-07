@@ -4,10 +4,10 @@ import CoreLocation
 
 // a client for accessing weather data for locations
 public struct WeatherClient {
-    public var weather: () -> AnyPublisher<WeatherResponse, Error>
+    public var weather: (Int) -> AnyPublisher<WeatherResponse, Error>
     public var searchLocations: (CLLocationCoordinate2D) -> AnyPublisher<[Location], Error>
     
-    public init(weather: @escaping () -> AnyPublisher<WeatherResponse, Error>, searchLocations: @escaping (CLLocationCoordinate2D) -> AnyPublisher<[Location], Error>) {
+    public init(weather: @escaping (Int) -> AnyPublisher<WeatherResponse, Error>, searchLocations: @escaping (CLLocationCoordinate2D) -> AnyPublisher<[Location], Error>) {
         self.weather = weather
         self.searchLocations = searchLocations
     }
@@ -34,5 +34,8 @@ public struct WeatherResponse: Decodable, Equatable {
     }
 }
 
-public struct Location{}
+public struct Location: Decodable {
+    public var title: String
+    public var woeid: Int
+}
 

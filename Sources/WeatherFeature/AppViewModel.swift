@@ -2,7 +2,7 @@ import Foundation
 import Combine
 import WeatherClient
 import PathMonitor
-
+import CoreLocation
 
 public class AppViewModel: ObservableObject {
     @Published var isConnected = false
@@ -40,7 +40,7 @@ public class AppViewModel: ObservableObject {
     
     func refresh() {
         self.weatherResults = []
-        self.weatherClient.weather()
+        self.weatherClient.weather(2459115)
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: { response in
@@ -50,5 +50,23 @@ public class AppViewModel: ObservableObject {
                 }
             )
             .store(in: &cancellables)
+    }
+    
+    func locationButtonTapped() {
+        let locationManager = CLLocationManager()
+        switch locationManager.authorizationStatus {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            // TODO show alert
+            break
+        case .denied:
+            // TODO show alert
+            break
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestLocation()
+        @unknown default:
+            break
+        }
     }
 }

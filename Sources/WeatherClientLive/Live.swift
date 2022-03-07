@@ -3,21 +3,24 @@ import CoreLocation
 import WeatherClient
 
 public extension WeatherClient {
-static let live = Self(
-    weather: {
-      URLSession.shared
-        .dataTaskPublisher(for: URL(string: "https://www.metaweather.com/api/location/2459115")!)
-        .map { data, _ in data }
-        .decode(type: WeatherResponse.self, decoder: weatherJsonDecoder)
-        .receive(on: DispatchQueue.main)
-        .eraseToAnyPublisher()
-    },
-    searchLocations: { coordinate in
-      fatalError()
+    static let live = Self { id in
+        URLSession.shared
+            .dataTaskPublisher(for: URL(string: "https://www.metaweather.com/api/location/\(id)")!)
+            .map(\.data)
+            .decode(type: WeatherResponse.self, decoder: weatherJsonDecoder)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    } searchLocations: {
+        URLSession.shared
+            .dataTaskPublisher(for: URL(string: "https://www.metaweather.com/api/location/search?lattlong=\($0.latitude),\($0.longitude)")!)
+            .map(\.data)
+            .decode(type: [Location].self, decoder: weatherJsonDecoder)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
-  )
 }
 
+#warning("for API's with camel case")
 private let weatherJsonDecoder: JSONDecoder = {
     let jsonDecoder = JSONDecoder()
     let formatter = DateFormatter()
