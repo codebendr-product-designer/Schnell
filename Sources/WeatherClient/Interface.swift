@@ -16,6 +16,11 @@ public struct WeatherClient {
 public struct WeatherResponse: Decodable, Equatable {
     public var consolidatedWeather: [ConsolidatedWeather]
     
+    public init(consolidatedWeather: [WeatherResponse.ConsolidatedWeather]) {
+        self.consolidatedWeather = consolidatedWeather
+    }
+
+    
     public struct ConsolidatedWeather: Decodable, Equatable {
         public var applicableDate: Date
         public var id: Int
@@ -34,7 +39,12 @@ public struct WeatherResponse: Decodable, Equatable {
     }
 }
 
-public struct Location: Decodable {
+public struct Location: Decodable, Equatable {
+    public init(title: String, woeid: Int) {
+        self.title = title
+        self.woeid = woeid
+    }
+    
     public var title: String
     public var woeid: Int
 }
