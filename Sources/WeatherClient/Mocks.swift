@@ -26,7 +26,7 @@ public extension WeatherClient {
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }, searchLocations: { _ in
-            Just([])
+            Just([.init(title: "New York", woeid: 1)])
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         })

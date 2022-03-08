@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F3B401427D735B400F31334 /* LocationClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9F3B401327D735B400F31334 /* LocationClientLive */; };
 		9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9F976AE527D3CAD200327BC3 /* PathMonitorLive */; };
 		9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */; };
 		9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A527CEA07F0066C3C4 /* WeatherFeature */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F05751827D6A0CB00C65AFC /* WeatherApp--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "WeatherApp--Info.plist"; sourceTree = "<group>"; };
 		9FAC543227BECABF00C2FC94 /* WeatherApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApp.swift; sourceTree = "<group>"; };
 		9FAC543427BECAC000C2FC94 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FAC543927BECAC000C2FC94 /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -27,6 +29,7 @@
 			files = (
 				9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */,
 				9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */,
+				9F3B401427D735B400F31334 /* LocationClientLive in Frameworks */,
 				9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -44,6 +47,7 @@
 		9FAC542C27BECABF00C2FC94 = {
 			isa = PBXGroup;
 			children = (
+				9F05751827D6A0CB00C65AFC /* WeatherApp--Info.plist */,
 				9FAC543127BECABF00C2FC94 /* Shared */,
 				9FAC543A27BECAC000C2FC94 /* Products */,
 				9FA6099E27CE2E450066C3C4 /* Frameworks */,
@@ -87,6 +91,7 @@
 				9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */,
 				9FA609A527CEA07F0066C3C4 /* WeatherFeature */,
 				9F976AE527D3CAD200327BC3 /* PathMonitorLive */,
+				9F3B401327D735B400F31334 /* LocationClientLive */,
 			);
 			productName = "WeatherApp (iOS)";
 			productReference = 9FAC543927BECAC000C2FC94 /* WeatherApp.app */;
@@ -269,6 +274,8 @@
 				DEVELOPMENT_TEAM = CLCZFAVBGV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WeatherApp--Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To fetch weather near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +306,8 @@
 				DEVELOPMENT_TEAM = CLCZFAVBGV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WeatherApp--Info.plist";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "To fetch weather near you.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +353,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		9F3B401327D735B400F31334 /* LocationClientLive */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = LocationClientLive;
+		};
 		9F976AE527D3CAD200327BC3 /* PathMonitorLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = PathMonitorLive;
