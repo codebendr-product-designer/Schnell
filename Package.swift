@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "Schnell",
-    platforms: [.iOS(.v15)],
+    platforms: [.iOS(.v15), .macOS(.v12)],
     products: [
         .library(name: "Schnell", targets: ["Schnell"]),
         .executable(

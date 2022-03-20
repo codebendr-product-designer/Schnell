@@ -81,7 +81,7 @@ final class ClientTests: XCTestCase {
             
             //    ImmediateScheduler
             
-            //    _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.01)
+              _ = XCTWaiter.wait(for: [XCTestExpectation()], timeout: 0.01)
             //    mainQueue.advance()
             XCTAssertEqual(viewModel.currentLocation, .brooklyn)
             XCTAssertEqual(viewModel.isConnected, true)
@@ -91,7 +91,7 @@ final class ClientTests: XCTestCase {
         func testCancellation() {
             let viewModel = AppViewModel(
                 locationClient: .authorizedWhenInUse,
-                pathMonitorClient: .satisfied,
+                pathMonitorClient: .unsatisfied,
                 weatherClient: WeatherClient(
                     weather: { _ in .init(.moderateWeather) },
                     searchLocations: { _ in .init([.brooklyn]) }
@@ -106,7 +106,7 @@ final class ClientTests: XCTestCase {
             self.mainQueue.run()
             
             XCTAssertEqual(viewModel.currentLocation, .brooklyn)
-            XCTAssertEqual(viewModel.isConnected, true)
+            XCTAssertFalse(viewModel.isConnected)
             XCTAssertEqual(viewModel.weatherResults, [])
         }
         
