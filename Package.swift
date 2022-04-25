@@ -14,6 +14,8 @@ let package = Package(
         .library(name: "ReactiveSwift", targets: ["ReactiveSwift"]),
         .library(name: "FunctionalSwift", targets: ["FunctionalSwift"]),
         .library(name: "Kabel", targets: ["Kabel"]),
+        //Conflict-free replicated data type
+        .library(name: "CRDTs", targets: ["CRDTs"]),
         
         //Dependency Design
         .library(name: "WeatherClient", targets: ["WeatherClient"]),
@@ -42,6 +44,7 @@ let package = Package(
         .target(name: "Schnell"),
         .target(name: "FunctionalSwift"),
         .target(name: "ReactiveSwift"),
+        .target(name: "CRDTs"),
         .executableTarget(
             name: "Koch",
             dependencies: [
