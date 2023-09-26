@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		9F3B401427D735B400F31334 /* LocationClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9F3B401327D735B400F31334 /* LocationClientLive */; };
+		9F51E4EB2AC277F300E051F8 /* SwiftMacrosClient in Frameworks */ = {isa = PBXBuildFile; productRef = 9F51E4EA2AC277F300E051F8 /* SwiftMacrosClient */; };
 		9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9F976AE527D3CAD200327BC3 /* PathMonitorLive */; };
 		9FA609A427CE9C3A0066C3C4 /* WeatherClientLive in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A327CE9C3A0066C3C4 /* WeatherClientLive */; };
 		9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */ = {isa = PBXBuildFile; productRef = 9FA609A527CEA07F0066C3C4 /* WeatherFeature */; };
@@ -27,6 +28,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F51E4EB2AC277F300E051F8 /* SwiftMacrosClient in Frameworks */,
 				9F976AE627D3CAD200327BC3 /* PathMonitorLive in Frameworks */,
 				9FA609A627CEA07F0066C3C4 /* WeatherFeature in Frameworks */,
 				9F3B401427D735B400F31334 /* LocationClientLive in Frameworks */,
@@ -92,6 +94,7 @@
 				9FA609A527CEA07F0066C3C4 /* WeatherFeature */,
 				9F976AE527D3CAD200327BC3 /* PathMonitorLive */,
 				9F3B401327D735B400F31334 /* LocationClientLive */,
+				9F51E4EA2AC277F300E051F8 /* SwiftMacrosClient */,
 			);
 			productName = "WeatherApp (iOS)";
 			productReference = 9FAC543927BECAC000C2FC94 /* WeatherApp.app */;
@@ -121,6 +124,9 @@
 				Base,
 			);
 			mainGroup = 9FAC542C27BECABF00C2FC94;
+			packageReferences = (
+				9F51E4E72AC277F300E051F8 /* XCLocalSwiftPackageReference "../SwiftMacros" */,
+			);
 			productRefGroup = 9FAC543A27BECAC000C2FC94 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -352,10 +358,21 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		9F51E4E72AC277F300E051F8 /* XCLocalSwiftPackageReference "../SwiftMacros" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SwiftMacros;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		9F3B401327D735B400F31334 /* LocationClientLive */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = LocationClientLive;
+		};
+		9F51E4EA2AC277F300E051F8 /* SwiftMacrosClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftMacrosClient;
 		};
 		9F976AE527D3CAD200327BC3 /* PathMonitorLive */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
+   <Group
+      location = "group:SwiftMacros/Sources"
+      name = "Sources">
+      <Group
+         location = "group:SwiftMacros"
+         name = "SwiftMacros">
+         <FileRef
+            location = "group:SwiftMacros.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:SwiftMacrosClient"
+         name = "SwiftMacrosClient">
+         <FileRef
+            location = "group:main.swift">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:SwiftMacrosMacros"
+         name = "SwiftMacrosMacros">
+         <FileRef
+            location = "group:SwiftMacrosMacro.swift">
+         </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:SwiftMacros/Tests"
+      name = "Tests">
+      <Group
+         location = "group:SwiftMacrosTests"
+         name = "SwiftMacrosTests">
+         <FileRef
+            location = "group:SwiftMacrosTests.swift">
+         </FileRef>
+      </Group>
+   </Group>
    <FileRef
       location = "group:TodosApp/Todos.xcodeproj">
    </FileRef>
