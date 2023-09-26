@@ -1,5 +1,7 @@
 import HTML
 
+//https://talk.objc.io/episodes/S01E343-swiftui-style-backend-library
+
 enum TitleKey: EnvironmentKey {
     static let defaultValue: String = "My Site"
 }
@@ -24,23 +26,23 @@ struct Archive: Rule {
     }
 }
 
-struct Blog: Rule {
-    var body: some Rule {
-        for post in ["one", "two", "three"] {
-            Write(contents: .text(post), to: "\(post).html")
-                .environment(\.title, "Blog - \(post)")
-        }
-    }
-}
+//struct Blog: Rule {
+//    var body: some Rule {
+//        for post in ["one", "two", "three"] {
+//            Write(contents: .text(post), to: "\(post).html")
+//                .environment(\.title, "Blog - \(post)")
+//        }
+//    }
+//}
 
 struct MySite: Rule {
     var body: some Rule {
         Index()
         Archive()
             .outputPath("archive")
-        Blog()
-            .outputPath("blog")
-            .wrap(BlogTemplate())
+//        Blog()
+//            .outputPath("blog")
+//            .wrap(BlogTemplate())
     }
 }
 

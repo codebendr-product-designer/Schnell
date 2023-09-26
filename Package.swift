@@ -1,4 +1,4 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.9
 
 import PackageDescription
 
@@ -28,7 +28,7 @@ let package = Package(
         .library(name: "DesignPatterns", targets: ["DesignPatterns"]),
     ],
     dependencies: [
-        .package(name: "HTML", url: "https://github.com/robb/Swim.git", .branch("main")),
+        .package(url: "https://github.com/robb/Swim.git", from: "0.4.0"),
         .package(url: "https://github.com/pointfreeco/combine-schedulers", from: "0.5.3")
     ],
     targets: [
@@ -48,8 +48,7 @@ let package = Package(
         .executableTarget(
             name: "Koch",
             dependencies: [
-                .product(name: "Swim", package: "HTML"),
-                .product(name: "HTML", package: "HTML"),
+                .product(name: "HTML", package: "Swim")
             ]
         ),
         .testTarget(
